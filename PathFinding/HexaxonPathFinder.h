@@ -6,7 +6,7 @@
 #include "PathFinder.h"
 
 template class API_LIB PathNode<6>;
-typedef PathNode<6> HexagonNode;
+
 
 class API_LIB HexaxonPathFinder : public PathFinder<6>
 {

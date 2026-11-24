@@ -23,3 +23,11 @@ void Grid::SetHeight(unsigned int height)
 {
 	this->_height = height;
 }
+unsigned int Grid::GetWidth()
+{
+	return _width;
+}
+unsigned int Grid::GetHeight()
+{
+	return _height;
+}

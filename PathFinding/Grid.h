@@ -1,10 +1,10 @@
 #pragma once
 #ifndef GRID_H
 #define GRID_H
+#include "Export.h"
 
 
-
-class Grid
+class API_LIB Grid
 {
 protected:
 	unsigned int _width;
@@ -20,7 +20,8 @@ protected:
 public:
 	void SetWidth(unsigned int width);
 	void SetHeight(unsigned int height);
-
+	unsigned int GetWidth();
+	unsigned int GetHeight();
 
 };
 #endif // GRID_H

@@ -48,20 +48,24 @@ void NodeTables::GetMinimumCost(NodeSearch& node)
 	}
 }
 #ifdef DEBUG
-
-
+void NodeTables::ShowNumberOfOpen()
+{
+	std::cout << "Number of Open :" << Open.size() << "\n";
+}
+void NodeTables::ShowNumberOfClosed()
+{
+	std::cout << "Number of Closed :" << Closed.size() << "\n";
+}
 void NodeTables::ShowCostTable(unsigned int width,unsigned int height)
 {
-	std::cout << "Number of Open :" << Open.size()<<"\n";
-	std::cout << "Number of Closed :" << Closed.size()<<"\n";
-
+	std::cout << "Search Cost Table :\n";
 	for (unsigned int y = 0; y < height; y++)
 	{
-	
+		std::cout << "\t";
 		for (unsigned int x = 0; x < width; x++)
 		{
 			std::string s(4,'-');
-		
+			
 
 			auto iteratorClosed = std::find_if(Closed.begin(), Closed.end(), [&](const NodeSearch& node)->bool {return (node.x == x && node.y == y); });
 			auto iteratorOpen = std::find_if(Open.begin(), Open.end(), [&](const NodeSearch& node)->bool {return (node.x == x && node.y == y); });
@@ -89,9 +93,10 @@ void NodeTables::ShowCostTable(unsigned int width,unsigned int height)
 }
 void  NodeTables::ShowParentTable(unsigned int width, unsigned int height)
 {
+	std::cout << "Search Parent Table :\n";
 	for (unsigned int y = 0; y < height; y++)
 	{
-
+		std::cout << "\t";
 		for (unsigned int x = 0; x < width; x++)
 		{
 			std::string s(4, '-');

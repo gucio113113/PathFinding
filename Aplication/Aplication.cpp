@@ -2,14 +2,38 @@
 //
 
 #include <iostream>
+#include <PathFinding/PathNodeTable.h>
 #include <PathFinding/SquareSlantPathFinder.h>
 #include <PathFinding/GridGenerator.h>
+#include <vector>
+
 
 
 int main()
 {
     SquareSlantPathFinder path;
+    GridGenerator generator;
+ 
+    generator.SetWidth(10);
+    generator.SetHeight(10);
+    
+    SquareSlantNodeTable squares=generator.GenerateSquareSlantGrid();
+    path.SetNodeTable(&squares);
 
+    squares.SetUnPassable(1, 1);
+    squares.SetUnPassable(1, 2);
+    squares.SetUnPassable(1, 3);
+    squares.SetUnPassable(1, 4);
+
+    squares.SetUnPassable(2, 1);
+    squares.SetUnPassable(3, 1);
+    squares.SetUnPassable(4, 1);
+
+    squares.ShowCost();
+    squares.ShowNumberNeigbors();
+
+
+    std::stack<Vector2i> FindedPath = path.GetPath(0, 0, 6, 6);
 
 
 

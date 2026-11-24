@@ -3,7 +3,7 @@
 #include <vector>
 #include <algorithm>
 #include "NodeSearch.h"
-#include "Debug.h"
+
 
 #ifdef DEBUG
 #include <iostream>
@@ -21,6 +21,7 @@ public:
 
 	inline bool IfStillOpenNodes() { return !Open.empty(); }
 
+	//void Reserve();
 	void AddOpen(NodeSearch node);
 	void AddToClosed(NodeSearch node);
 	void DeleteFromOpenAddToClosed(unsigned int x,unsigned int y);
@@ -28,6 +29,10 @@ public:
 	void GetMinimumCost(NodeSearch &node);
 
 #ifdef DEBUG
+
+	void ShowNumberOfOpen();
+	void ShowNumberOfClosed();
+
 	void ShowCostTable(unsigned int width, unsigned int height);
 	void ShowParentTable(unsigned int width, unsigned int height);
 #endif // DEBUG

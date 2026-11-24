@@ -114,7 +114,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>EXPORT_H;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>DEBUG;EXPORT_H;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
@@ -128,13 +128,14 @@
     <ClCompile Include="HexaxonPathFinder.cpp" />
     <ClCompile Include="NodeSearch.cpp" />
     <ClCompile Include="NodeTables.cpp" />
+    <ClCompile Include="PathFinder.cpp" />
     <ClCompile Include="PathFinding.cpp" />
+    <ClCompile Include="PathNodeTable.cpp" />
     <ClCompile Include="SquarePathFinder.cpp" />
     <ClCompile Include="SquareSlantPathFinder.cpp" />
     <ClCompile Include="TrianglePathFinder.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Debug.h" />
     <ClInclude Include="Export.h" />
     <ClInclude Include="Grid.h" />
     <ClInclude Include="GridGenerator.h" />
@@ -143,6 +144,7 @@
     <ClInclude Include="NodeTables.h" />
     <ClInclude Include="PathFinder.h" />
     <ClInclude Include="PathNode.h" />
+    <ClInclude Include="PathNodeTable.h" />
     <ClInclude Include="SquarePathFinder.h" />
     <ClInclude Include="SquareSlantPathFinder.h" />
     <ClInclude Include="TrianglePathFinder.h" />

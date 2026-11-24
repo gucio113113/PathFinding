@@ -2,15 +2,15 @@
 
 GridGenerator::GridGenerator(){}
 
-std::vector<TriangleNode> GridGenerator::GenerateTriangleGrid(std::vector<unsigned int>* TableOfCost)
+TriangleNodeTable GridGenerator::GenerateTriangleGrid(std::vector<unsigned int>* TableOfCost)
 {
-	std::vector<TriangleNode> grid(_width* _height);
+	TriangleNodeTable grid(_width,_height);
 	for (unsigned int y = 0; y < _height; y++)
 	{
 		for (unsigned int x = 0; x < _width; x++)
 		{
-			 TriangleNode & node = grid[getIndex(x, y)];
-			 if (TableOfCost != nullptr && TableOfCost->size() == grid.size())
+			 TriangleNode & node = grid.table[getIndex(x, y)];
+			 if (TableOfCost != nullptr && TableOfCost->size() == grid.table.size())
 				 node.cost = TableOfCost->at(getIndex(x,y));
 
 				if (checkIndex(x - 1, y) == true)
@@ -38,15 +38,15 @@ std::vector<TriangleNode> GridGenerator::GenerateTriangleGrid(std::vector<unsign
 	}
 	return grid;
 }
-std::vector<SquareNode> GridGenerator::GenerateSquareGrid(std::vector<unsigned int>* TableOfCost)
+SquareNodeTable GridGenerator::GenerateSquareGrid(std::vector<unsigned int>* TableOfCost)
 {
-	std::vector<SquareNode> grid(_width * _height);
+	SquareNodeTable grid(_width,_height);
 	for (unsigned int y = 0; y < _height; y++)
 	{
 		for (unsigned int x = 0; x < _width; x++)
 		{
-			SquareNode& node = grid[getIndex(x, y)];
-			if (TableOfCost != nullptr && TableOfCost->size() == grid.size())
+			SquareNode& node = grid.table[getIndex(x, y)];
+			if (TableOfCost != nullptr && TableOfCost->size() == grid.table.size())
 				node.cost = TableOfCost->at(getIndex(x, y));
 
 			if (checkIndex(x, y-1) == true)
@@ -74,15 +74,15 @@ std::vector<SquareNode> GridGenerator::GenerateSquareGrid(std::vector<unsigned i
 	}
 	return grid;
 }
-std::vector<SquareSlantNode> GridGenerator::GenerateSquareSlantGrid(std::vector<unsigned int>* TableOfCost)
+SquareSlantNodeTable GridGenerator::GenerateSquareSlantGrid(std::vector<unsigned int>* TableOfCost)
 {
-	std::vector<SquareSlantNode> grid(_width * _height);
+	SquareSlantNodeTable grid(_width, _height);
 	for (unsigned int y = 0; y < _height; y++)
 	{
 		for (unsigned int x = 0; x < _width; x++)
 		{
-			SquareSlantNode& node = grid[getIndex(x, y)];
-			if (TableOfCost != nullptr && TableOfCost->size() == grid.size())
+			SquareSlantNode& node = grid.table[getIndex(x, y)];
+			if (TableOfCost != nullptr && TableOfCost->size() == grid.table.size())
 				node.cost = TableOfCost->at(getIndex(x, y));
 			if (checkIndex(x, y - 1) == true)
 			{
@@ -129,15 +129,15 @@ std::vector<SquareSlantNode> GridGenerator::GenerateSquareSlantGrid(std::vector<
 	}
 	return grid;
 }
-std::vector<HexagonNode> GridGenerator::GenerateHexagonGrid(std::vector<unsigned int>* TableOfCost)
+HexagonNodeTable GridGenerator::GenerateHexagonGrid(std::vector<unsigned int>* TableOfCost)
 {
-	std::vector<HexagonNode> grid(_width * _height);
+	HexagonNodeTable grid(_width , _height);
 	for (unsigned int y = 0; y < _height; y++)
 	{
 		for (unsigned int x = 0; x < _width; x++)
 		{
-			HexagonNode & node = grid[getIndex(x, y)];
-			if (TableOfCost != nullptr && TableOfCost->size() == grid.size())
+			HexagonNode & node = grid.table[getIndex(x, y)];
+			if (TableOfCost != nullptr && TableOfCost->size() == grid.table.size())
 				node.cost = TableOfCost->at(getIndex(x, y));
 			if (checkIndex(x, y - 1) == true)
 			{

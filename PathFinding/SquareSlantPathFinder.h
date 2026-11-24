@@ -6,7 +6,6 @@
 #include "PathFinder.h"
 
 template class API_LIB PathNode<8>;
-template class API_LIB PathFinder<8>;
 
 class API_LIB  SquareSlantPathFinder : public PathFinder<8>
 {

@@ -12,7 +12,6 @@
 #include "PathFinder.h"
 
 template class API_LIB PathNode<3>;
-template class API_LIB PathFinder<3>;
 
 class API_LIB  TrianglePathFinder : public PathFinder<3>
 {

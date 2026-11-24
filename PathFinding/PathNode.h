@@ -2,7 +2,7 @@
 
 #ifndef PATHNODE_H
 
-#define DEBUG
+
 
 #ifdef DEBUG
 #include <iostream>

@@ -54,15 +54,18 @@
     <ClCompile Include="NodeTables.cpp">
       <Filter>Pliki źródłowe\Data</Filter>
     </ClCompile>
+    <ClCompile Include="PathFinder.cpp">
+      <Filter>Pliki źródłowe\PathFinders</Filter>
+    </ClCompile>
+    <ClCompile Include="PathNodeTable.cpp">
+      <Filter>Pliki źródłowe\Data</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GridGenerator.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
     <ClInclude Include="Grid.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="Debug.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
     <ClInclude Include="TrianglePathFinder.h">
@@ -91,6 +94,9 @@
     </ClInclude>
     <ClInclude Include="PathFinder.h">
       <Filter>Pliki nagłówkowe\PathFinders</Filter>
+    </ClInclude>
+    <ClInclude Include="PathNodeTable.h">
+      <Filter>Pliki nagłówkowe\Data</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
